@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <index :moduleInfo="moduleInfo"></index>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Index from './components/index.js';
+import SchemaData from './schema.json';
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Index
+  },
+  data() {
+      return {
+          moduleInfo: {
+            name: '双图模块',
+            type: 'two-pic',
+            schema: SchemaData
+          }
+      }
   }
 }
 </script>
@@ -23,6 +31,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
